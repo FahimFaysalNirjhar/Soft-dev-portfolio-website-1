@@ -9,7 +9,7 @@ const experienceData = [
     company: "Drik · Full-time",
     years: "Nov 2021 – Jul 2024 · 2 yrs 9 mos",
     description:
-      "Built, maintained, and deployed modern web applications using React, Next.js, Redux, Node.js, Express.js, PHP, MySQL, and Oracle Database. Worked across the MERN stack to deliver scalable and engaging user experiences while overseeing website operations, SEO, social media management, digital marketing initiatives, and web hosting on Namecheap and GoDaddy.",
+      "Worked as a Full-Stack Developer and Webmaster, building and maintaining web applications with React, Next.js, Node.js, Express.js, MongoDB, PostgreSQL, and Prisma ORM. Managed website operations, SEO, social media platforms, and digital marketing campaigns to improve website performance and online engagement.",
     icon: FaGlobe,
   },
 ];
@@ -18,7 +18,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="w-full px-5 lg:px-8 xl:px-[12%] py-20 scroll-mt-20"
+      className="w-full px-5 lg:px-8 xl:px-[12%]  scroll-mt-20"
     >
       {/* Section Header */}
       <h4 className="text-center mb-2 font-Ovo text-lg">
