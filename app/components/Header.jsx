@@ -4,7 +4,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4 mt-10">
       <div className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-white shadow-md">
         <Image
           src="/pro_pic.jpg"
@@ -22,8 +22,8 @@ const Header = () => {
         Full-Stack Developer & DevOps Engineer
       </h1>
       <p className="max-w-2xl mx-auto font-Ovo">
-        Passionate about building robust web applications, cloud infrastructure,
-        and efficient DevOps automation.
+        Full-Stack Developer & DevOps Engineer specializing in scalable web
+        applications, cloud infrastructure, and automated CI/CD pipelines.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a

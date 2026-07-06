@@ -85,7 +85,11 @@ const Navbar = () => {
             />
           </a>
           <button className="block lg:hidden ml-3" onClick={openMenu}>
-            <Image src={assets.menu_black} alt="" className="w-6" />
+            <Image
+              src={assets.menu_black}
+              alt=""
+              className="w-6 cursor-pointer"
+            />
           </button>
         </div>
 
