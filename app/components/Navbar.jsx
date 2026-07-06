@@ -64,7 +64,11 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <button>
-            <Image src={assets.moon_icon} alt="" className="w-6" />
+            <Image
+              src={assets.moon_icon}
+              alt=""
+              className="w-6 cursor-pointer"
+            />
           </button>
 
           <a
