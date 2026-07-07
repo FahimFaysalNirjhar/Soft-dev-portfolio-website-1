@@ -36,33 +36,13 @@ const Experience = () => {
             <div
               key={index}
               className="
-                border border-gray-300
-                rounded-[32px]
-                p-8 md:p-10
-                bg-white
-                cursor-pointer
-                transition-all
-                duration-500
-                hover:bg-[#fcf4ff]
-                hover:-translate-y-1
-                hover:shadow-[6px_6px_0px_#000]
-                active:bg-[#fcf4ff]
-                active:-translate-y-1
-                active:shadow-[6px_6px_0px_#000]
-                hover:font-bold
-                active:font-bold
-              "
+                border border-gray-300 rounded-4xl p-8 md:p-10 bg-white cursor-pointer transition-all duration-500 hover:bg-[#fcf4ff] hover:-translate-y-1 hover:shadow-[6px_6px_0px_#000] active:bg-[#fcf4ff] active:-translate-y-1 active:shadow-[6px_6px_0px_#000]hover:font-bold active:font-bold"
             >
               {/* Top */}
               <div className="flex items-start gap-5">
                 <div
                   className="
-                    w-14 h-14
-                    rounded-2xl
-                    border border-gray-300
-                    flex items-center justify-center
-                    shrink-0
-                  "
+                    w-14 h-14 rounded-2xl border border-gray-300 flex items-center justify-center shrink-0"
                 >
                   <Icon className="text-2xl" />
                 </div>

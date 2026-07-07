@@ -1,9 +1,11 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 
 const Navbar = () => {
+  const [isScroll, setIsScroll] = useState(false);
+
   const sideMenuRef = useRef();
 
   const openMenu = () => {
@@ -14,17 +16,31 @@ const Navbar = () => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
+
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
-      <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+      <nav
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm" : ""}`}
+      >
         <a href="#top">
           <Logo />
         </a>
 
-        <ul className="hidden lg:flex items-center gap-2 lg:gap-3 xl:gap-6 2xl:gap-8 rounded-full px-4 lg:px-5 xl:px-8 2xl:px-12 py-2 lg:py-2.5 xl:py-3 bg-white shadow-sm bg-opacity-50 text-sm xl:text-base">
+        <ul
+          className={`hidden lg:flex items-center gap-2 lg:gap-3 xl:gap-6 2xl:gap-8 rounded-full px-4 lg:px-5 xl:px-8 2xl:px-12 py-2 lg:py-2.5 xl:py-3  text-sm xl:text-base ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50"}`}
+        >
           <li>
             <a className="font-Ovo whitespace-nowrap" href="#top">
               Home
