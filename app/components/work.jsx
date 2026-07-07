@@ -32,8 +32,8 @@ const projects = [
     description:
       "A responsive news application featuring Firebase Authentication, protected routes, dynamic news categories, article details pages, email verification, password recovery, and social login integration.",
     tech: "React • Firebase Auth • React Router • Tailwind CSS • DaisyUI",
-    live: "https://github.com/FahimFaysalNirjhar/Dragon-News-React",
-    github: "https://github.com/FahimFaysalNirjhar",
+    github: "https://github.com/FahimFaysalNirjhar/Dragon-News-React",
+    live: "https://dragon-news-react-projec-8767f.web.app/category/1",
   },
   {
     title: "Portfolio Website",
@@ -259,7 +259,7 @@ const Work = () => {
             className="
               px-8 py-3
               rounded-full
-              border border-gray-300
+              border border-gray-700
               font-medium
               transition-all
               duration-300
@@ -267,6 +267,7 @@ const Work = () => {
               hover:shadow-[4px_4px_0px_#000]
               hover:bg-[#fcf4ff]
               active:bg-[#fcf4ff]
+              text-gray-700
             "
           >
             {showAll ? "Show Less" : "Show More"}
