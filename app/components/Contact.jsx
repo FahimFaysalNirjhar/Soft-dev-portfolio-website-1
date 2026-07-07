@@ -61,18 +61,31 @@ const Contact = () => {
     e.preventDefault();
     setStatus("sending");
 
-    // TODO: wire this up to your email service (EmailJS, Resend, an API route, etc.)
-    // Example with a Next.js API route:
-    // await fetch("/api/contact", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(formData),
-    // });
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "af887fe9-4dba-499e-8c87-0f833660c87e",
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
-    setTimeout(() => {
-      setStatus("sent");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1000);
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("sent");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Contact form error:", err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -320,10 +333,11 @@ const Contact = () => {
                 "Sending..."
               ) : status === "sent" ? (
                 "Message Sent ✓"
+              ) : status === "error" ? (
+                "Failed — Try Again"
               ) : (
                 <>
-                  Send Message
-                  <FaPaperPlane size={14} />
+                  Send Message <FaPaperPlane size={14} />
                 </>
               )}
             </button>
