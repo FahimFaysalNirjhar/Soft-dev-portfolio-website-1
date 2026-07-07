@@ -152,7 +152,7 @@ const Work = () => {
 
       <h2 className="text-center text-5xl font-Ovo">My Latest Work</h2>
 
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600">
+      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 font-Ovo">
         A selection of projects showcasing my experience in full-stack
         development, cloud infrastructure, and DevOps.
       </p>
