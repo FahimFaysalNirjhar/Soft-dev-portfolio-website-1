@@ -94,10 +94,10 @@ const Contact = () => {
       className="w-full px-5 lg:px-8 xl:px-[12%] py-20 scroll-mt-20"
     >
       <h4 className="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
-      <h2 className="text-center text-5xl font-Ovo">Let&apos;s talk</h2>
+      <h2 className="text-center text-5xl font-Ovo">Get In Touch</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 font-Ovo">
-        I&apos;m always open to discussing new projects, creative ideas, or
-        opportunities to be part of your vision.
+        I&apos;m always open to discussing new projects, freelance
+        opportunities, and full-time roles.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -120,6 +120,10 @@ const Contact = () => {
                   duration-300
                   hover:-translate-y-1
                   hover:shadow-md
+                  active:-translate-y-1
+                  active:shadow-md
+                  hover:bg-[#fcf4ff]
+                    active:bg-[#fcf4ff]
                 "
               >
                 <span
@@ -167,6 +171,11 @@ const Contact = () => {
                     hover:border-violet-300
                     transition-colors
                     duration-300
+                    hover:bg-[#fcf4ff]
+                    active:bg-[#fcf4ff]
+                    hover:-translate-y-1
+                    active:-translate-y-1
+                   
                   "
                 >
                   {social.icon}

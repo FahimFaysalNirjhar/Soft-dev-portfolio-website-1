@@ -170,6 +170,8 @@ const Work = () => {
               duration-300
               hover:-translate-y-2
               hover:shadow-xl
+              active:-translate-y-2
+              active:shadow-xl
             "
           >
             {/* Project Image */}
@@ -205,6 +207,7 @@ const Work = () => {
                     rounded-full
                     border border-gray-300
                     hover:bg-gray-50
+                    active:bg-gray-50
                   "
                   onClick={() => openProject(project)}
                 >
@@ -224,6 +227,7 @@ const Work = () => {
                     border border-violet-500
                     text-violet-600
                     hover:bg-violet-50
+                    active:bg-violet-50
                   "
                 >
                   Live
@@ -241,6 +245,7 @@ const Work = () => {
                     rounded-full
                     border border-gray-300
                     hover:bg-gray-50
+                    active:bg-gray-50
                   "
                 >
                   GitHub
@@ -265,6 +270,8 @@ const Work = () => {
               duration-300
               hover:-translate-y-1
               hover:shadow-[4px_4px_0px_#000]
+              active:shadow-[4px_4px_0px_#000]
+              active:-translate-y-1
               hover:bg-[#fcf4ff]
               active:bg-[#fcf4ff]
               text-gray-700
