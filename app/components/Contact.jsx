@@ -69,7 +69,7 @@ const Contact = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "af887fe9-4dba-499e-8c87-0f833660c87e",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
