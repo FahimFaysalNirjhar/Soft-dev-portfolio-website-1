@@ -24,26 +24,26 @@ import {
   SiPrisma,
 } from "react-icons/si";
 
-export const toolsData = [
+const toolsData = [
   { name: "HTML", icon: FaHtml5, color: "#E34F26" },
   { name: "CSS", icon: FaCss3Alt, color: "#1572B6" },
   { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
   { name: "React", icon: FaReact, color: "#61DAFB" },
   { name: "Redux", icon: SiRedux, color: "#764ABC" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF", needsBg: true },
   { name: "Node.js", icon: FaNodeJs, color: "#339933" },
-  { name: "Express.js", icon: SiExpress, color: "#000000" },
+  { name: "Express.js", icon: SiExpress, color: "#FFFFFF", needsBg: true },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-  { name: "Prisma ORM", icon: SiPrisma, color: "#2D3748" },
-  { name: "Linux", icon: FaLinux, color: "#FCC624" },
+  { name: "Prisma ORM", icon: SiPrisma, color: "#FFFFFF", needsBg: true },
+  { name: "Linux", icon: FaLinux, color: "#000000", needsBg: true },
   { name: "Docker", icon: FaDocker, color: "#2496ED" },
   { name: "AWS", icon: FaAws, color: "#FF9900" },
   { name: "Git", icon: FaGitAlt, color: "#F05032" },
 ];
 
-const About = () => {
+const About = ({ isDarkMode }) => {
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center mb-2 text-lg font-Ovo">Introduction</h4>
@@ -75,16 +75,26 @@ const About = () => {
               <li
                 className="border-[0.5px] border-gray-400 rounded-xl
                 p-6 cursor-pointer hover:bg-[#fcf4ff] hover:font-bold hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0px_#000] active:bg-[#fcf4ff]  active:scale-[1.02] active:-translate-y-1 active:shadow-[4px_4px_0px_#000]
+                dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50
+                dark:active:shadow-white dark:active:bg-darkHover/50
 "
                 key={idx}
               >
-                <Image className="w-7 mt-3" src={icon} alt={title} />
-                <h3 className="my-4 font-semibold text-gray-700">{title}</h3>
-                <p className="text-gray-600 text-sm">{description}</p>
+                <Image
+                  className="w-7 mt-3"
+                  src={isDarkMode ? iconDark : icon}
+                  alt={title}
+                />
+                <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
+                  {title}
+                </h3>
+                <p className="text-gray-600 text-sm dark:text-white/80">
+                  {description}
+                </p>
               </li>
             ))}
           </ul>
-          <h4 className="my-8 text-gray-700 font-semibold font-Ovo">
+          <h4 className="my-8 text-gray-700 font-semibold font-Ovo dark:text-white/80">
             Tech Stack
           </h4>
           <ul className="flex flex-wrap gap-4">
@@ -94,13 +104,29 @@ const About = () => {
               return (
                 <li
                   key={index}
-                  className="p-4 border border-gray-300 rounded-xl hover:shadow-[4px_4px_0px_#000] hover:-translate-y-1 transition-all duration-300 cursor-pointer  active:shadow-[4px_4px_0px_#000] active:-translate-y-1"
+                  className="p-4 border border-gray-300 rounded-xl hover:shadow-[4px_4px_0px_#000] hover:-translate-y-1 transition-all duration-300 cursor-pointer active:shadow-[4px_4px_0px_#000] active:-translate-y-1"
                 >
-                  <Icon
-                    size={42}
-                    color={tool.color}
-                    className="hover:scale-110 transition-transform duration-300"
-                  />
+                  {tool.needsBg ? (
+                    <span
+                      className={`inline-flex items-center justify-center rounded-md p-1.5 ${
+                        tool.name === "Linux"
+                          ? "bg-white"
+                          : "bg-neutral-800 dark:bg-neutral-700"
+                      }`}
+                    >
+                      <Icon
+                        size={30}
+                        color={tool.color}
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
+                    </span>
+                  ) : (
+                    <Icon
+                      size={42}
+                      color={tool.color}
+                      className="hover:scale-110 transition-transform duration-300"
+                    />
+                  )}
                 </li>
               );
             })}
