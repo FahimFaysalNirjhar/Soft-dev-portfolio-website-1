@@ -36,29 +36,44 @@ const Experience = () => {
             <div
               key={index}
               className="
-                border border-gray-300 rounded-4xl p-8 md:p-10 bg-white cursor-pointer transition-all duration-500 hover:bg-[#fcf4ff] hover:-translate-y-1 hover:shadow-[6px_6px_0px_#000] active:bg-[#fcf4ff] active:-translate-y-1 active:shadow-[6px_6px_0px_#000]hover:font-bold active:font-bold"
+    border border-gray-300 dark:border-white/20
+    rounded-4xl p-8 md:p-10
+    bg-white dark:bg-darkHover/40
+    cursor-pointer transition-all duration-500
+    hover:bg-[#fcf4ff] hover:-translate-y-1 hover:shadow-[6px_6px_0px_#000]
+    active:bg-[#fcf4ff] active:-translate-y-1 active:shadow-[6px_6px_0px_#000]
+    dark:hover:bg-darkHover dark:hover:shadow-white
+    dark:active:bg-darkHover dark:active:shadow-white
+    hover:font-bold active:font-bold"
             >
               {/* Top */}
               <div className="flex items-start gap-5">
                 <div
                   className="
-                    w-14 h-14 rounded-2xl border border-gray-300 flex items-center justify-center shrink-0"
+        w-14 h-14 rounded-2xl border border-gray-300 dark:border-white/30
+        flex items-center justify-center shrink-0"
                 >
-                  <Icon className="text-2xl" />
+                  <Icon className="text-2xl dark:text-white" />
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold">{item.title}</h3>
+                  <h3 className="text-2xl font-semibold dark:text-white">
+                    {item.title}
+                  </h3>
 
-                  <p className="text-gray-500 mt-1">{item.company}</p>
+                  <p className="text-gray-500 dark:text-white/70 mt-1">
+                    {item.company}
+                  </p>
 
-                  <p className="text-sm font-medium mt-2">{item.years}</p>
+                  <p className="text-sm font-medium mt-2 dark:text-white/70">
+                    {item.years}
+                  </p>
                 </div>
               </div>
 
               {/* Divider */}
-              <div className="mt-6 border-t border-gray-200 pt-6">
-                <p className="font-Ovo text-gray-600 leading-8">
+              <div className="mt-6 border-t border-gray-200 dark:border-white/20 pt-6">
+                <p className="font-Ovo text-gray-600 dark:text-white/80 leading-8">
                   {item.description}
                 </p>
               </div>
