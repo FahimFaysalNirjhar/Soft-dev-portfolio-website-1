@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@config "../tailwind.config.mjs";
 
 @theme {
   --font-outfit: var(--font-outfit), sans-serif;

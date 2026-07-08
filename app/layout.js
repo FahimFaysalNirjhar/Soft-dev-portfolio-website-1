@@ -22,9 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${outfit.className} ${ovo.className} h-full antialiased leading-8 overflow-x-hidden scroll-smooth`}
+      className={`${outfit.className} ${ovo.className} h-full antialiased leading-8 overflow-x-hidden scroll-smooth `}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col dark:bg-darkTheme dark:text-white">
+        {children}
+      </body>
     </html>
   );
 }
