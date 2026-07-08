@@ -31,7 +31,7 @@ const Experience = () => {
           scale: [1, 1.15, 1],
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-20 left-1/4 w-72 h-72 bg-gray-300/30 dark:bg-white/10 rounded-full blur-3xl -z-10"
+        className="absolute -top-20 left-1/4 w-72 h-72  dark:bg-white/10 rounded-full blur-3xl -z-10"
       />
       <motion.div
         animate={{

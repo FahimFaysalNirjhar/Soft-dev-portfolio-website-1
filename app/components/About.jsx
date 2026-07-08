@@ -1,7 +1,9 @@
+"use client";
+
 import { infoList } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
-import { motion, scale } from "motion/react";
+import { motion } from "motion/react";
 
 import {
   FaHtml5,
@@ -50,6 +52,7 @@ const About = ({ isDarkMode }) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      viewport={{ once: false, amount: 0.2 }}
       id="about"
       className="w-full px-[12%] py-10 scroll-mt-20"
     >
@@ -57,6 +60,7 @@ const About = ({ isDarkMode }) => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
+        viewport={{ once: false, amount: 0.5 }}
         className="text-center mb-2 text-lg font-Ovo"
       >
         Introduction
@@ -65,21 +69,36 @@ const About = ({ isDarkMode }) => {
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-center text-5xl font-Ovo"
+        viewport={{ once: false, amount: 0.5 }}
+        className="text-center text-5xl font-Ovo mb-4"
       >
         About Me
       </motion.h2>
+
+      {/* Animated underline — black/white */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        viewport={{ once: false, amount: 0.5 }}
+        className="h-1 w-24 mx-auto mb-16 rounded-full bg-gradient-to-r from-black via-gray-500 to-black dark:from-white dark:via-gray-400 dark:to-white bg-[length:200%_100%]"
+        style={{ originX: 0 }}
+      />
 
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="flex w-full items-center lg:items-start flex-col lg:flex-row  gap-20 my-20"
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex w-full items-center lg:items-start flex-col lg:flex-row gap-20 my-20"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 1.03 }}
           className="w-64 sm:w-80 rounded-3xl max-w-none"
         >
           <Image
@@ -93,7 +112,8 @@ const About = ({ isDarkMode }) => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: false, amount: 0.2 }}
           className="flex-1"
         >
           <p className="mb-10 max-w-2xl font-Ovo cursor-pointer transition-all duration-500 hover:font-bold hover:-translate-y-1 active:font-bold active:-translate-y-1 ">
@@ -109,18 +129,23 @@ const About = ({ isDarkMode }) => {
           <motion.ul
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
             className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6 max-w-2xl"
           >
             {infoList.map(({ icon, iconDark, title, description }, idx) => (
               <motion.li
-                whileHover={{ scale: 1.05 }}
-                className="border-[0.5px] border-gray-400 rounded-xl
-                p-6 cursor-pointer hover:bg-[#fcf4ff] hover:font-bold hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0px_#000] active:bg-[#fcf4ff]  active:scale-[1.02] active:-translate-y-1 active:shadow-[4px_4px_0px_#000]
-                dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50
-                dark:active:shadow-white dark:active:bg-darkHover/50
-"
                 key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 1.05 }}
+                className="border-[0.5px] border-gray-400 rounded-xl
+                p-6 cursor-pointer hover:bg-[#fcf4ff] hover:font-bold hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0px_#000] active:bg-[#fcf4ff] active:scale-[1.02] active:-translate-y-1 active:shadow-[4px_4px_0px_#000]
+                dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50
+                dark:active:shadow-white dark:active:bg-darkHover/50"
               >
                 <Image
                   className="w-7 mt-3"
@@ -139,7 +164,8 @@ const About = ({ isDarkMode }) => {
           <motion.h4
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.3 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: false, amount: 0.5 }}
             className="my-8 text-gray-700 font-semibold font-Ovo dark:text-white/80"
           >
             Tech Stack
@@ -147,7 +173,8 @@ const About = ({ isDarkMode }) => {
           <motion.ul
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.5 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: false, amount: 0.2 }}
             className="flex flex-wrap gap-4"
           >
             {toolsData.map((tool, index) => {
@@ -155,9 +182,19 @@ const About = ({ isDarkMode }) => {
 
               return (
                 <motion.li
-                  whileInView={{ scale: 1.1 }}
                   key={index}
-                  className="p-4 border border-gray-300 rounded-xl hover:shadow-[4px_4px_0px_#000] hover:-translate-y-1 transition-all duration-300 cursor-pointer active:shadow-[4px_4px_0px_#000] active:-translate-y-1"
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.04,
+                    type: "spring",
+                    stiffness: 150,
+                  }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  whileHover={{ scale: 1.1, y: -4 }}
+                  whileTap={{ scale: 1.1, y: -4 }}
+                  className="p-4 border border-gray-300 rounded-xl hover:shadow-[4px_4px_0px_#000] transition-shadow duration-300 cursor-pointer active:shadow-[4px_4px_0px_#000]"
                 >
                   {tool.needsBg ? (
                     <span
@@ -167,18 +204,10 @@ const About = ({ isDarkMode }) => {
                           : "bg-neutral-800 dark:bg-neutral-700"
                       }`}
                     >
-                      <Icon
-                        size={30}
-                        color={tool.color}
-                        className="hover:scale-110 transition-transform duration-300"
-                      />
+                      <Icon size={30} color={tool.color} />
                     </span>
                   ) : (
-                    <Icon
-                      size={42}
-                      color={tool.color}
-                      className="hover:scale-110 transition-transform duration-300"
-                    />
+                    <Icon size={42} color={tool.color} />
                   )}
                 </motion.li>
               );
