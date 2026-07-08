@@ -1,11 +1,17 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
+import { motion, scale } from "motion/react";
 
 const Header = () => {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4 mt-10">
-      <div className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-white shadow-md">
+    <div className="w-11/12 max-w-3xl text-center mx-auto min-h-screen flex flex-col items-center justify-center gap-4 pt-24 lg:pt-28">
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
+        className="w-32 h-32 rounded-full overflow-hidden ring-4 ring-white shadow-md"
+      >
         <Image
           src="/pro_pic.jpg"
           alt="Profile picture"
@@ -13,7 +19,7 @@ const Header = () => {
           height={128}
           className="w-full h-full object-cover object-[center_25%]"
         />
-      </div>
+      </motion.div>
       <h3 className="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
         Hi! I'm Fahim Faysal Nirjhar{" "}
         <Image src={assets.hand_icon} alt="" className="w-6" />
