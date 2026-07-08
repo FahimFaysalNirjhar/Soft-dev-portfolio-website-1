@@ -152,7 +152,7 @@ const Work = () => {
 
       <h2 className="text-center text-5xl font-Ovo">My Latest Work</h2>
 
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 font-Ovo">
+      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70 font-Ovo">
         A selection of projects showcasing my experience in full-stack
         development, cloud infrastructure, and DevOps.
       </p>
@@ -162,16 +162,7 @@ const Work = () => {
           <div
             key={index}
             className="
-              bg-white borde border-gray-200
-              rounded-2xl
-              overflow-hidden
-              shadow-sm
-              transition-all
-              duration-300
-              hover:-translate-y-2
-              hover:shadow-xl
-              active:-translate-y-2
-              active:shadow-xl
+               bg-white dark:bg-darkHover/40 border border-gray-200 dark:border-white/20 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl active:-translate-y-2 active:shadow-xl
             "
           >
             {/* Project Image */}
@@ -187,28 +178,22 @@ const Work = () => {
 
             {/* Content */}
             <div className="p-5">
-              <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 dark:text-white">
+                {project.title}
+              </h3>
 
-              <p className="text-gray-600 text-sm leading-6 mb-4">
+              <p className="text-gray-600 dark:text-white/70 text-sm leading-6 mb-4">
                 {project.description}
               </p>
 
-              <p className="text-sm font-medium text-violet-600 mb-5">
+              <p className="text-sm font-medium text-violet-600 dark:text-violet-400 mb-5">
                 {project.tech}
               </p>
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-2">
                 <button
-                  className="
-                    flex items-center gap-2
-                    px-4 py-2
-                    text-sm
-                    rounded-full
-                    border border-gray-300
-                    hover:bg-gray-50
-                    active:bg-gray-50
-                  "
+                  className="flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-gray-300 dark:border-white/30 text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-white/10 active:bg-gray-50 dark:active:bg-white/10"
                   onClick={() => openProject(project)}
                 >
                   Details
@@ -219,16 +204,7 @@ const Work = () => {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="
-                    flex items-center gap-2
-                    px-4 py-2
-                    text-sm
-                    rounded-full
-                    border border-violet-500
-                    text-violet-600
-                    hover:bg-violet-50
-                    active:bg-violet-50
-                  "
+                  className="flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-violet-500 text-violet-600 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-500/10 active:bg-violet-50 dark:active:bg-violet-500/10"
                 >
                   Live
                   <FaExternalLinkAlt size={12} />
@@ -238,15 +214,7 @@ const Work = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="
-                    flex items-center gap-2
-                    px-4 py-2
-                    text-sm
-                    rounded-full
-                    border border-gray-300
-                    hover:bg-gray-50
-                    active:bg-gray-50
-                  "
+                  className="flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-gray-300 dark:border-white/30 text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-white/10 active:bg-gray-50 dark:active:bg-white/10"
                 >
                   GitHub
                   <FaGithub size={12} />
@@ -262,20 +230,22 @@ const Work = () => {
           <button
             onClick={() => setShowAll(!showAll)}
             className="
-              px-8 py-3
-              rounded-full
-              border border-gray-700
-              font-medium
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:shadow-[4px_4px_0px_#000]
-              active:shadow-[4px_4px_0px_#000]
-              active:-translate-y-1
-              hover:bg-[#fcf4ff]
-              active:bg-[#fcf4ff]
-              text-gray-700
-            "
+    px-8 py-3
+    rounded-full
+    border border-gray-700 dark:border-white/40
+    font-medium
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:shadow-[4px_4px_0px_#000]
+    dark:hover:shadow-white
+    active:shadow-[4px_4px_0px_#000]
+    dark:active:shadow-white
+    active:-translate-y-1
+    hover:bg-[#fcf4ff] dark:hover:bg-darkHover
+    active:bg-[#fcf4ff] dark:active:bg-darkHover
+    text-gray-700 dark:text-white
+  "
           >
             {showAll ? "Show Less" : "Show More"}
           </button>
@@ -283,7 +253,7 @@ const Work = () => {
       )}
 
       <dialog id="project_modal" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box max-w-5xl p-0">
+        <div className="modal-box max-w-5xl p-0 dark:bg-darkTheme dark:text-white">
           {selectedProject && (
             <>
               <div className="w-full bg-gray-100">
@@ -297,7 +267,9 @@ const Work = () => {
               </div>
 
               <div className="p-8">
-                <h2 className="text-3xl font-bold">{selectedProject.title}</h2>
+                <h2 className="text-3xl font-bold dark:text-white/80">
+                  {selectedProject.title}
+                </h2>
 
                 {selectedProject.subtitle && (
                   <p className="text-violet-600 mt-1">
@@ -305,13 +277,15 @@ const Work = () => {
                   </p>
                 )}
 
-                <p className="mt-5 text-gray-600 leading-7">
+                <p className="mt-5 text-gray-600 dark:text-white/70 leading-7">
                   {selectedProject.overview || selectedProject.description}
                 </p>
 
                 {selectedProject.technologies?.length > 0 && (
                   <div className="mt-8">
-                    <h3 className="font-semibold mb-3">Technologies</h3>
+                    <h3 className="font-semibold mb-3 dark:text-white">
+                      Technologies
+                    </h3>
 
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech) => (
@@ -334,15 +308,15 @@ const Work = () => {
 
                 {selectedProject.features?.length > 0 && (
                   <div className="mt-8">
-                    <h3 className="font-semibold mb-3">Key Features</h3>
+                    <h3 className="font-semibold mb-3 dark:text-white">
+                      Key Features
+                    </h3>
 
                     <ul className="grid md:grid-cols-2 gap-3">
                       {selectedProject.features.map((feature) => (
                         <li
                           key={feature}
-                          className="
-                        flex items-center gap-2
-                      "
+                          className="flex items-center gap-2 dark:text-white/90"
                         >
                           <span>✓</span>
                           {feature}
@@ -357,13 +331,7 @@ const Work = () => {
                     href={selectedProject.live}
                     target="_blank"
                     rel="noreferrer"
-                    className="
-                px-5 py-3
-                rounded-full
-                bg-violet-600
-                text-white
-                flex items-center gap-2
-              "
+                    className="px-5 py-3 rounded-full border border-gray-300 dark:border-white/30 flex items-center gap-2 dark:text-white"
                   >
                     Live Demo
                     <FaExternalLinkAlt />
