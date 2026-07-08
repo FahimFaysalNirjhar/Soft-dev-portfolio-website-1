@@ -61,13 +61,20 @@ const Services = () => {
         active:shadow-[4px_4px_0px_#000]
         hover:font-bold
         active:font-bold
+        dark:hover:bg-darkHover
+        dark:hover:shadow-white
+        dark:active:bg-darkHover
+        dark:active:shadow-white
+
       "
           >
             <Icon className="text-4xl mb-4" />
 
-            <h3 className="text-lg font-semibold mb-3">{title}</h3>
+            <h3 className="text-lg font-semibold mb-3 ">{title}</h3>
 
-            <p className="text-gray-600 text-sm leading-6">{description}</p>
+            <p className="text-gray-600 text-sm leading-6 dark:text-white/80">
+              {description}
+            </p>
           </div>
         ))}
       </div>
