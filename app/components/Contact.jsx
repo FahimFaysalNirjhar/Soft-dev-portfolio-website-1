@@ -95,7 +95,7 @@ const Contact = () => {
     >
       <h4 className="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
       <h2 className="text-center text-5xl font-Ovo">Get In Touch</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 font-Ovo">
+      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70 font-Ovo">
         I&apos;m always open to discussing new projects, freelance
         opportunities, and full-time roles.
       </p>
@@ -110,39 +110,16 @@ const Contact = () => {
                 key={item.label}
                 {...(item.href ? { href: item.href } : {})}
                 className="
-                  flex items-center gap-4
-                  bg-white
-                  border border-gray-200
-                  rounded-2xl
-                  p-5
-                  shadow-sm
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:shadow-md
-                  active:-translate-y-1
-                  active:shadow-md
-                  hover:bg-[#fcf4ff]
-                    active:bg-[#fcf4ff]
-                "
+                   flex items-center gap-4 bg-white dark:bg-darkHover/40 border border-gray-200 dark:border-white/20 rounded-2xl p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md active:-translate-y-1 active:shadow-md hover:bg-[#fcf4ff] dark:hover:bg-darkHover active:bg-[#fcf4ff] dark:active:bg-darkHover"
               >
-                <span
-                  className="
-                    flex items-center justify-center
-                    w-11 h-11
-                    rounded-xl
-                    bg-violet-100
-                    text-violet-600
-                    shrink-0
-                  "
-                >
+                <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-violet-100 dark:bg-violet-500/20 text-violet-600 dark:text-violet-300 shrink-0">
                   {item.icon}
                 </span>
                 <span>
-                  <span className="block text-xs text-gray-500">
+                  <span className="block text-xs text-gray-500 dark:text-white/50 ">
                     {item.label}
                   </span>
-                  <span className="block font-semibold text-gray-900">
+                  <span className="block font-semibold text-gray-900 dark:text-white">
                     {item.value}
                   </span>
                 </span>
@@ -151,7 +128,7 @@ const Contact = () => {
           })}
 
           <div className="mt-4">
-            <h3 className="font-semibold mb-3">Follow me</h3>
+            <h3 className="font-semibold mb-3 dark:text-white">Follow me</h3>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -160,23 +137,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="
-                    flex items-center justify-center
-                    w-11 h-11
-                    rounded-full
-                    border border-gray-200
-                    bg-white
-                    text-gray-600
-                    hover:text-violet-600
-                    hover:border-violet-300
-                    transition-colors
-                    duration-300
-                    hover:bg-[#fcf4ff]
-                    active:bg-[#fcf4ff]
-                    hover:-translate-y-1
-                    active:-translate-y-1
-                   
-                  "
+                  className="flex items-center justify-center w-11 h-11 rounded-full border border-gray-200 dark:border-white/20 bg-white dark:bg-darkHover/40 text-gray-600 dark:text-white hover:text-violet-600 dark:hover:text-violet-300 hover:border-violet-300 dark:hover:border-violet-400/50 transition-colors duration-300 hover:bg-[#fcf4ff] dark:hover:bg-darkHover active:bg-[#fcf4ff] dark:active:bg-darkHover hover:-translate-y-1 active:-translate-y-1"
                 >
                   {social.icon}
                 </a>
@@ -188,19 +149,19 @@ const Contact = () => {
         {/* Right column - form */}
         <div
           className="
-            bg-white
-            border border-gray-200
-            rounded-2xl
-            shadow-sm
-            p-8
-          "
+    bg-white dark:bg-darkHover/40
+    border border-gray-200 dark:border-white/20
+    rounded-2xl
+    shadow-sm
+    p-8
+  "
         >
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-sm font-medium mb-2 dark:text-white"
                 >
                   Name
                 </label>
@@ -214,15 +175,17 @@ const Contact = () => {
                   placeholder="John Smith"
                   className="
                     w-full
-                    px-4 py-3
-                    rounded-xl
-                    border border-gray-200
-                    bg-gray-50
-                    text-sm
-                    outline-none
-                    focus:border-violet-400
-                    focus:bg-white
-                    transition-colors
+  px-4 py-3
+  rounded-xl
+  border border-gray-200 dark:border-white/20
+  bg-gray-50 dark:bg-darkTheme
+  text-sm
+  text-gray-900 dark:text-white
+  placeholder:text-gray-400 dark:placeholder:text-white/40
+  outline-none
+  focus:border-violet-400 dark:focus:border-violet-400
+  focus:bg-white dark:focus:bg-darkTheme
+  transition-colors
                   "
                 />
               </div>
@@ -230,7 +193,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-sm font-medium mb-2 dark:text-white"
                 >
                   Email
                 </label>
@@ -244,15 +207,17 @@ const Contact = () => {
                   placeholder="john@example.com"
                   className="
                     w-full
-                    px-4 py-3
-                    rounded-xl
-                    border border-gray-200
-                    bg-gray-50
-                    text-sm
-                    outline-none
-                    focus:border-violet-400
-                    focus:bg-white
-                    transition-colors
+  px-4 py-3
+  rounded-xl
+  border border-gray-200 dark:border-white/20
+  bg-gray-50 dark:bg-darkTheme
+  text-sm
+  text-gray-900 dark:text-white
+  placeholder:text-gray-400 dark:placeholder:text-white/40
+  outline-none
+  focus:border-violet-400 dark:focus:border-violet-400
+  focus:bg-white dark:focus:bg-darkTheme
+  transition-colors
                   "
                 />
               </div>
@@ -261,7 +226,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium mb-2"
+                className="block text-sm font-medium mb-2 dark:text-white"
               >
                 Subject
               </label>
@@ -274,24 +239,26 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Project Inquiry"
                 className="
-                  w-full
-                  px-4 py-3
-                  rounded-xl
-                  border border-gray-200
-                  bg-gray-50
-                  text-sm
-                  outline-none
-                  focus:border-violet-400
-                  focus:bg-white
-                  transition-colors
-                "
+                    w-full
+  px-4 py-3
+  rounded-xl
+  border border-gray-200 dark:border-white/20
+  bg-gray-50 dark:bg-darkTheme
+  text-sm
+  text-gray-900 dark:text-white
+  placeholder:text-gray-400 dark:placeholder:text-white/40
+  outline-none
+  focus:border-violet-400 dark:focus:border-violet-400
+  focus:bg-white dark:focus:bg-darkTheme
+  transition-colors
+                  "
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium mb-2"
+                className="block text-sm font-medium mb-2 dark:text-white"
               >
                 Message
               </label>
@@ -304,18 +271,19 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Tell me about your project..."
                 className="
-                  w-full
-                  px-4 py-3
-                  rounded-xl
-                  border border-gray-200
-                  bg-gray-50
-                  text-sm
-                  outline-none
-                  focus:border-violet-400
-                  focus:bg-white
-                  transition-colors
-                  resize-y
-                "
+                    w-full
+  px-4 py-3
+  rounded-xl
+  border border-gray-200 dark:border-white/20
+  bg-gray-50 dark:bg-darkTheme
+  text-sm
+  text-gray-900 dark:text-white
+  placeholder:text-gray-400 dark:placeholder:text-white/40
+  outline-none
+  focus:border-violet-400 dark:focus:border-violet-400
+  focus:bg-white dark:focus:bg-darkTheme
+  transition-colors
+                  "
               />
             </div>
 
@@ -323,20 +291,21 @@ const Contact = () => {
               type="submit"
               disabled={status === "sending"}
               className="
-                flex items-center justify-center gap-2
-                w-full
-                px-6 py-3.5
-                rounded-xl
-                bg-gray-900
-                text-white
-                font-medium
-                text-sm
-                hover:bg-violet-600
-                transition-colors
-                duration-300
-                disabled:opacity-60
-                disabled:cursor-not-allowed
-              "
+    flex items-center justify-center gap-2
+    w-full
+    px-6 py-3.5
+    rounded-xl
+    bg-gray-900 dark:bg-white
+    text-white dark:text-gray-900
+    font-medium
+    text-sm
+    hover:bg-violet-600 dark:hover:bg-violet-500
+    dark:hover:text-white
+    transition-colors
+    duration-300
+    disabled:opacity-60
+    disabled:cursor-not-allowed
+  "
             >
               {status === "sending" ? (
                 "Sending..."
